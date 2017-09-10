@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour {
 	// Use this for initialization
 
 	void Awake(){
-		
+		shotSpawn = transform.GetChild (0);
 	}
 	void Start () {}
 	

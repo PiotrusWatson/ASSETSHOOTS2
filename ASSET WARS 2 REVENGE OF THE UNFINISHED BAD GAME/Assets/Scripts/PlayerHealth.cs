@@ -11,10 +11,9 @@ public class PlayerHealth : Health {
 
  void Awake()
     {
-		
+		GetComponent<CommonVars> ().team = Team.Player;
 		livesText = GameObject.FindGameObjectWithTag ("UITEXT").GetComponent<Text> ();	
         livesText.text = "Lives: " + lives;
-		team = Team.Player;
 	}
 
 	void Start() {

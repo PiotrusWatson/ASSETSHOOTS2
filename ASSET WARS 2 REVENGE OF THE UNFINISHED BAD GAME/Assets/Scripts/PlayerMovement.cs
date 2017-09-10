@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
         moveHori = 0;
         moveVert = 0;
-        moveHori = Input.GetAxisRaw(horizontalMovInput);
+        moveHori = Input.GetAxis(horizontalMovInput);
         moveVert = Input.GetAxisRaw(verticalMovInput);
     }
 

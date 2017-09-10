@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class EnemyHealth : Health {
 	void Awake(){
-		team = Team.Enemy;
+		GetComponent<CommonVars> ().team = Team.Enemy;
 	}
 	// Update is called once per frame
-	public void Update () {
+	void Update () {
+		
 		base.Update();
 
 		if (isDead==true) {
 			Destroy (gameObject);
 		}
 	}
+
+
 }

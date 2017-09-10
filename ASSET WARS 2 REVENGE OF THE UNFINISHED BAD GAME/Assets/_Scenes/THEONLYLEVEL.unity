@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 792347159}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: UITEXT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -536,6 +536,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114307131339447990, guid: 555b927b263b1254f9b0724a7e89a3ae,
+        type: 2}
+      propertyPath: fireRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114392592612145784, guid: 555b927b263b1254f9b0724a7e89a3ae, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 555b927b263b1254f9b0724a7e89a3ae, type: 2}
   m_IsPrefabParent: 0

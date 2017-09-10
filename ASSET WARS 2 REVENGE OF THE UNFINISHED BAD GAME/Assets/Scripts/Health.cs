@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public enum Team{Player,Enemy,Neutral};
-
 public class Health : MonoBehaviour {
-	public Team team  = Team.Neutral;
 
 	DamageOnHit dmgScript;
-	Health healthScript;
+	CommonVars teamScript;
+	Team team;
 
 	[SerializeField]
 	protected float maxHealth = 1;
@@ -20,17 +17,18 @@ public class Health : MonoBehaviour {
 	void Start () {
 		health = maxHealth;
 		isDead = false;
+		team = GetComponent<CommonVars> ().team;
 	}
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D c) {
 		dmgScript = c.GetComponent<DamageOnHit> ();
-		healthScript = c.GetComponent<Health> ();
+		teamScript = c.GetComponent<CommonVars> ();
 
-		if (dmgScript == null || healthScript == null)
+		if (dmgScript == null || teamScript == null)
 			return;
 
-		if (team == c.GetComponent<Health> ().team)
+		if (teamScript.team == Team.Neutral || team == teamScript.team)
 			return;
 		
 		if (!isDead)

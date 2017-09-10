@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shotHealth : Health{
+public class ShotBehaviour : MonoBehaviour {
 
 	// Use this for initialization
-	void Awake () {
-		team = Team.Player;
+	void Start () {
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-	void OnTriggerEnter2D(Collider2D c){
-		if (!c.GetComponent<Health> ())
-			return;
-
-		if (c.GetComponent<Health> ().team != team)
+	void OnTriggerStay2D(Collider2D c){
+		if (!c.CompareTag("Player"))				
 			Destroy (gameObject);
-		
 	}
 }
