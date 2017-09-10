@@ -5,9 +5,9 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	[SerializeField]
-	float maxHealth = 100;
-	float health;
-	bool isDead;
+	protected float maxHealth = 100;
+	protected float health;
+	protected bool isDead;
 
 	// Use this for initialization
 	void Start () {
@@ -31,5 +31,5 @@ public class Health : MonoBehaviour {
 
 	public void Die(){
 		isDead = true;
-	}
+    }
 }
