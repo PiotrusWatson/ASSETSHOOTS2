@@ -1,12 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : Health {
 
-	new public void Die()
+    public Text livesText;
+    public int lives = 3;
+    bool gameOver = false;
+
+ void awake()
+    {
+        livesText = livesText.GetComponent<Text>();
+        livesText.text = "Lives: " + lives;
+    }
+    new public void Die()
     {
         //erase
+        lives -= 1;
+        livesText.text = "Lives: " + lives;
         GetComponent<SpriteRenderer>().color = Color.clear;
         GetComponent<BoxCollider2D>().enabled = false;
         //respawn: reset position
@@ -22,6 +34,10 @@ public class PlayerHealth : Health {
         if (health <= 0)
         {
             Die();
+        }
+        if(lives < 0)
+        {
+            gameOver = true;
         }
     }
 }
