@@ -10,6 +10,14 @@ public class Boundary
 
 public class PlayerMovement : MonoBehaviour {
 
+    //shooting stuff
+    public float fireRate = 2;
+    public GameObject shot;
+    private Transform shotSpawn;
+    private float nextFire = 0;
+    
+
+    //movement stuff
     public int speed = 0;
     public string horizontalMovInput;
     public string verticalMovInput;
@@ -20,7 +28,8 @@ public class PlayerMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();        
+        shotSpawn = transform.GetChild(0).transform;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +38,11 @@ public class PlayerMovement : MonoBehaviour {
         moveVert = 0;
         moveHori = Input.GetAxisRaw(horizontalMovInput);
         moveVert = Input.GetAxisRaw(verticalMovInput);
-        
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler (0,0,90));
+        }
     }
 
 
