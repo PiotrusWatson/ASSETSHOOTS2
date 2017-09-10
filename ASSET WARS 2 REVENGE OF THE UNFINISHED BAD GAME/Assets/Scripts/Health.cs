@@ -34,6 +34,8 @@ public class Health : MonoBehaviour {
 		
 		if (!isDead)
 			health -= (dmgScript.damage);
+
+
 	}
 
 	void Update(){
