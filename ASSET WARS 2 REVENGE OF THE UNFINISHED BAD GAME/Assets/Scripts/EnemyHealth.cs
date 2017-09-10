@@ -7,13 +7,11 @@ public class EnemyHealth : Health {
 		team = Team.Enemy;
 	}
 	// Update is called once per frame
-	void Update () {
-		if (health <= 0) {
-			Die ();
-		}
-	}
+	public void Update () {
+		base.Update();
 
-	public void Die(){
-		Destroy (gameObject);
+		if (isDead==true) {
+			Destroy (gameObject);
+		}
 	}
 }
