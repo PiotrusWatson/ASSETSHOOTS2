@@ -13,4 +13,8 @@ public class DestroyOnExit : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnTriggerLeave(Collider2D c){
+		Destroy (c.gameObject);
+	}
 }

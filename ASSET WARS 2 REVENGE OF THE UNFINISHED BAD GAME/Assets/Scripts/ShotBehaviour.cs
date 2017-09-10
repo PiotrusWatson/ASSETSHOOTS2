@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ShotBehaviour : MonoBehaviour {
 
+	Team team;
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+		team = GetComponent<CommonVars> ().team;
 	}
 	
 	// Update is called once per frame
@@ -14,7 +15,12 @@ public class ShotBehaviour : MonoBehaviour {
 		
 	}
 	void OnTriggerStay2D(Collider2D c){
-		if (!c.CompareTag("Player"))				
-			Destroy (gameObject);
+		if (team == c.GetComponent<CommonVars> ().team)
+			return;
+		if (c.GetComponent<CommonVars> ().team == Team.Neutral)
+			return;
+		
+		Destroy (gameObject);
+			
 	}
 }
