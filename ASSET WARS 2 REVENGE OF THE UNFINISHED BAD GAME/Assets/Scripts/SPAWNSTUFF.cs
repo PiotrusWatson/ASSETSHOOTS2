@@ -34,7 +34,7 @@ public class SPAWNSTUFF : MonoBehaviour {
 		while (true) {
 			for (int i = 0; i < enemyNum; i++) {
 				spawnPosition = new Vector3 (bounds.center.x, Random.Range (bounds.min.y, bounds.max.y));
-				Instantiate (Enemies [Random.Range (0, Enemies.Length)], spawnPosition, Quaternion.identity);
+				Instantiate (Enemies [Random.Range (0, Enemies.Length)], spawnPosition, Quaternion.Euler(0, 0, -90));
 
 			}
 			spawnTime = spawnTime > 0.5f ? spawnTime - 0.1f : spawnTime;
