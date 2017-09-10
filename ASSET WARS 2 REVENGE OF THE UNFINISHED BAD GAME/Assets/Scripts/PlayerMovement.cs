@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, yMin, yMax;
+}
+
 public class PlayerMovement : MonoBehaviour {
 
     public int speed = 0;
@@ -10,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     float moveHori = 0;
     float moveVert = 0;
     private Rigidbody2D rb;
+    public Boundary boundary;
 
     // Use this for initialization
     void Start () {
@@ -22,12 +29,19 @@ public class PlayerMovement : MonoBehaviour {
         moveVert = 0;
         moveHori = Input.GetAxisRaw(horizontalMovInput);
         moveVert = Input.GetAxisRaw(verticalMovInput);
+        
     }
+
 
     void FixedUpdate() {
         Vector2 movement = new Vector2(moveHori, moveVert);
         rb.velocity = speed * movement;
-
+        rb.position = new Vector3
+        (
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax),
+            0.0f
+        );
     }
 
     }
