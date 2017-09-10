@@ -10,8 +10,9 @@ public class Health : MonoBehaviour {
 
 	DamageOnHit dmgScript;
 	Health healthScript;
+
 	[SerializeField]
-	protected float maxHealth = 100;
+	protected float maxHealth = 1;
 	protected float health;
 	protected bool isDead;
 
@@ -36,13 +37,14 @@ public class Health : MonoBehaviour {
 			health -= (dmgScript.damage);
 	}
 
-	void Update(){
+	public void Update(){
 		if (health <= 0) {
 			Die ();
 		}
 	}
 
 	public void Die(){
+		//Probably do an explosion animation or something too
 		isDead = true;
     }
 }
