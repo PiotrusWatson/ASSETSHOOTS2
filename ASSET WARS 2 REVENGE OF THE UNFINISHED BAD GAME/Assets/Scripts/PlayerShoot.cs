@@ -6,10 +6,14 @@ public class PlayerShoot : MonoBehaviour {
 	//shooting stuff
 	public float fireRate = 2;
 	public GameObject shot;
-	public Transform shotSpawn;
+	Transform shotSpawn;
 	private float shootTimer = 0.0f;
 
 	// Use this for initialization
+
+	void Awake(){
+		
+	}
 	void Start () {}
 	
 	// Update is called once per frame

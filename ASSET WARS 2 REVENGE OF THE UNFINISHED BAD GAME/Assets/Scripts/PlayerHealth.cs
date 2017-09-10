@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerHealth : Health {
 
-    public Text livesText;
+	Text livesText;
     public int lives = 3;
     bool gameOver = false;
 
  void Awake()
     {
-        livesText = livesText.GetComponent<Text>();
+		
+		livesText = GameObject.FindGameObjectWithTag ("UITEXT").GetComponent<Text> ();	
         livesText.text = "Lives: " + lives;
 		team = Team.Player;
-}
+	}
+
+	void Start() {
+		
+	}
 
 	new public void Die()
     {
@@ -26,11 +31,10 @@ public class PlayerHealth : Health {
         //respawn: reset position
         transform.position = new Vector3(-200, 0, 0);
         //respawn: make appear
-        GetComponent<SpriteRenderer>().color = Color.white;
-        GetComponent<BoxCollider2D>().enabled = true;
-        health = maxHealth;
-        isDead = false;
+        Respawn ();
     }
+
+
     void Update()
     {
         if (health <= 0)
@@ -42,4 +46,12 @@ public class PlayerHealth : Health {
             gameOver = true;
         }
     }
+
+	void Respawn ()
+	{
+		GetComponent<SpriteRenderer> ().color = Color.white;
+		GetComponent<BoxCollider2D> ().enabled = true;
+		health = maxHealth;
+		isDead = false;
+	}
 }
