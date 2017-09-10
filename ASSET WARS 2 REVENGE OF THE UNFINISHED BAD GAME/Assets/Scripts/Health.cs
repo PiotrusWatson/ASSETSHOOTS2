@@ -29,7 +29,7 @@ public class Health : MonoBehaviour {
 			return;
 
 		if (teamScript.team == Team.Neutral || team == teamScript.team)
-			return
+			return;
 		
 		if (!isDead)
 			health -= (dmgScript.damage);

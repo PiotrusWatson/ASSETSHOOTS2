@@ -14,7 +14,10 @@ public class DestroyOnExit : MonoBehaviour {
 		
 	}
 
-	void OnTriggerLeave(Collider2D c){
+	void OnTriggerExit2D(Collider2D c){
+		if (c.CompareTag ("Player"))
+			return;
+		
 		Destroy (c.gameObject);
 	}
 }
