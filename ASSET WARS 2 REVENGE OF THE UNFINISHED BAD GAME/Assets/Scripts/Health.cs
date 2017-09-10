@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
 
+public enum Team{Player,Enemy,Neutral};
+
+public class Health : MonoBehaviour {
+	public Team team  = Team.Neutral;
+
+	DamageOnHit dmgScript;
+	Health healthScript;
 	[SerializeField]
 	protected float maxHealth = 100;
 	protected float health;
@@ -17,10 +23,17 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D c) {
-		if (c.GetComponent<DamageOnHit>()) {
-			if (!isDead)
-				health -= (c.GetComponent<DamageOnHit> ().damage);
-		}
+		dmgScript = c.GetComponent<DamageOnHit> ();
+		healthScript = c.GetComponent<Health> ();
+
+		if (dmgScript == null || healthScript == null)
+			return;
+
+		if (team == c.GetComponent<Health> ().team)
+			return;
+		
+		if (!isDead)
+			health -= (dmgScript.damage);
 	}
 
 	void Update(){

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : Health {
 
+	void Awake(){
+		team = Team.Player;
+	}
+
 	new public void Die()
     {
         //erase
