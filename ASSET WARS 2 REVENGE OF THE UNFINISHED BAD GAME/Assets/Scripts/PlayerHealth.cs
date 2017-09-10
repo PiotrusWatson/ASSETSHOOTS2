@@ -14,7 +14,7 @@ public class PlayerHealth : Health {
         GetComponent<SpriteRenderer>().color = Color.clear;
         GetComponent<BoxCollider2D>().enabled = false;
         //respawn: reset position
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(-200, 0, 0);
         //respawn: make appear
         GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<BoxCollider2D>().enabled = true;
