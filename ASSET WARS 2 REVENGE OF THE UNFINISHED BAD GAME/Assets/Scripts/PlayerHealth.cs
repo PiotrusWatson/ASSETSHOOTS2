@@ -9,12 +9,14 @@ public class PlayerHealth : Health {
     public int lives = 3;
     bool gameOver = false;
 
- void awake()
+ void Awake()
     {
         livesText = livesText.GetComponent<Text>();
         livesText.text = "Lives: " + lives;
-    }
-    new public void Die()
+		team = Team.Player;
+}
+
+	new public void Die()
     {
         //erase
         lives -= 1;
@@ -22,7 +24,7 @@ public class PlayerHealth : Health {
         GetComponent<SpriteRenderer>().color = Color.clear;
         GetComponent<BoxCollider2D>().enabled = false;
         //respawn: reset position
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(-200, 0, 0);
         //respawn: make appear
         GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<BoxCollider2D>().enabled = true;

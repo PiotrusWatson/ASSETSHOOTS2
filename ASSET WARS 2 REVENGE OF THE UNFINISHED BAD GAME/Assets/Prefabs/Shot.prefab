@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114638313284132956}
   - component: {fileID: 50870628196541336}
   - component: {fileID: 61667906096573032}
+  - component: {fileID: 114578723962081432}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Untagged
@@ -88,6 +89,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4044619, y: 8.080521}
   m_EdgeRadius: 0
+--- !u!114 &114578723962081432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765909891714436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedf77b04575c4e45862553e466a7530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!114 &114638313284132956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50e21374c548554f84028f33dc26c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: 0
   speed: 600
 --- !u!212 &212024953257594960
 SpriteRenderer:
