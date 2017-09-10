@@ -1,0 +1,18 @@
+THINGS WE NEED DONE:
+
+Player behaviour
+	- Movement
+	- Shootan
+	- Dying
+	
+Enemy
+	- Spawning
+	- Behaviour
+	- Health
+
+Background
+	- Generation of background from array of tiles
+	- Looping
+
+
+!IMPORTANT! make sure each new object placed uses a different coloured tile - by recolouring the placeholder tile. 
