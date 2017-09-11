@@ -14,7 +14,7 @@ public class ShotBehaviour : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnTriggerStay2D(Collider2D c){
+	void OnTriggerEnter2D(Collider2D c){
 		if (team == c.GetComponent<CommonVars> ().team)
 			return;
 		if (c.GetComponent<CommonVars> ().team == Team.Neutral)

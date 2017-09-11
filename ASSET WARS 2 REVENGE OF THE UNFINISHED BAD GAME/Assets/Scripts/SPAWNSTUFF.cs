@@ -38,7 +38,6 @@ public class SPAWNSTUFF : MonoBehaviour {
 			for (int i = 0; i < enemyNum; i++) {
 				spawnPosition = new Vector3 (bounds.center.x, Random.Range (bounds.min.y, bounds.max.y));
 				Instantiate (Enemies [Random.Range (0, (difficultyModifier < Enemies.Length ? difficultyModifier : Enemies.Length))], spawnPosition, Quaternion.Euler(0, 0, -90));
-
 			}
 			if (upOne) {
 				upOne = false;

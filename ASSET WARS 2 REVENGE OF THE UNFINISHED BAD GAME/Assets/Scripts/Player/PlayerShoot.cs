@@ -8,11 +8,12 @@ public class PlayerShoot : MonoBehaviour {
 	public GameObject shot;
 	Transform shotSpawn;
 	private float shootTimer = 0.0f;
-
+	private AudioSource audio;
 	// Use this for initialization
 
 	void Awake(){
-		shotSpawn = transform.GetChild (0);
+		shotSpawn = transform;
+		audio = GetComponent<AudioSource>();
 	}
 	void Start () {}
 	
@@ -21,6 +22,7 @@ public class PlayerShoot : MonoBehaviour {
 		if (Input.GetButton("Jump") && shootTimer <= 0)
 		{
 			shootTimer = fireRate;
+			audio.Play();
 			Instantiate(shot, shotSpawn.position, Quaternion.Euler (0,0,90));
 		}
 
