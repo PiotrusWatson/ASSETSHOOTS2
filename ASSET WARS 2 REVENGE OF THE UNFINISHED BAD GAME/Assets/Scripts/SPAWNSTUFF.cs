@@ -7,7 +7,10 @@ public class SPAWNSTUFF : MonoBehaviour {
 	Bounds bounds;
 	float spawnTime;
 	Vector3 spawnPosition;
-
+	[HideInInspector]
+	public int difficultyModifier = 0;
+	[HideInInspector]
+	public bool upOne = false;
 
 	[SerializeField]
 	float initialSpawnTime = 10f;
@@ -34,10 +37,13 @@ public class SPAWNSTUFF : MonoBehaviour {
 		while (true) {
 			for (int i = 0; i < enemyNum; i++) {
 				spawnPosition = new Vector3 (bounds.center.x, Random.Range (bounds.min.y, bounds.max.y));
-				Instantiate (Enemies [Random.Range (0, Enemies.Length)], spawnPosition, Quaternion.Euler(0, 0, -90));
+				Instantiate (Enemies [Random.Range (0, (difficultyModifier < Enemies.Length ? difficultyModifier : Enemies.Length))], spawnPosition, Quaternion.Euler(0, 0, -90));
 
 			}
-			spawnTime = spawnTime > 0.5f ? spawnTime - 0.1f : spawnTime;
+			if (upOne) {
+				upOne = false;
+				spawnTime = spawnTime > 0.5f ? spawnTime - 0.2f : spawnTime;
+			}
 			yield return new WaitForSeconds (spawnTime);
 		}
 	}

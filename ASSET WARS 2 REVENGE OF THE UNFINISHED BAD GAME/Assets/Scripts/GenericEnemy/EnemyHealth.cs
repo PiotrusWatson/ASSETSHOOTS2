@@ -16,5 +16,4 @@ public class EnemyHealth : Health {
 		}
 	}
 
-
 }

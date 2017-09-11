@@ -29,10 +29,11 @@ public class Health : MonoBehaviour {
 			return;
 
 		if (teamScript.team == Team.Neutral || team == teamScript.team)
-			return;
+			return;	
 		
-		if (!isDead)
-			health -= (dmgScript.damage);
+		if (!isDead) {
+			rigidBodyHurt (dmgScript.damage, c.transform);
+		}
 
 
 	}
@@ -47,4 +48,14 @@ public class Health : MonoBehaviour {
 		//Probably do an explosion animation or something too
 		isDead = true;
     }
+
+	public void rigidBodyHurt(float damage, Transform other, float force = 20f){
+		//DOESN'T WORK LOL - rigidbody null. not sure why.
+		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
+		if (rb != null) {
+			rb.AddForce ((transform.position - other.position).normalized * force);
+		}
+		health -= damage;
+
+	}
 }

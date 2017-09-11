@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61667906096573032}
   - component: {fileID: 114578723962081432}
   - component: {fileID: 114495419032374974}
+  - component: {fileID: 114867321533427984}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Untagged
@@ -126,6 +127,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: 0
   speed: 600
+--- !u!114 &114867321533427984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765909891714436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6155bdcf9991a9241ae55ba620104fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
 --- !u!212 &212024953257594960
 SpriteRenderer:
   m_ObjectHideFlags: 1
