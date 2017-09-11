@@ -7,6 +7,7 @@ TagManager:
   - UITEXT
   - UISCORE
   - Spawner
+  - Enemy
   layers:
   - Default
   - TransparentFX
