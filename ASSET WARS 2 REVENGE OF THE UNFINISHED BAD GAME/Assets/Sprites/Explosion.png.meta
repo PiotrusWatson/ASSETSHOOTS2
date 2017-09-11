@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: f2cce4938ad95495986738c9e0496189
-timeCreated: 1505140020
+timeCreated: 1505159322
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Explosion_0
+    21300002: Explosion_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -46,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 2000
+  spritePixelsToUnits: 0.001
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -121,10 +122,24 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4000
+        width: 2000
         height: 2000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

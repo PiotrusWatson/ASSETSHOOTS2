@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  explosion: {fileID: 1988797044019664, guid: 3ad1a5e95321f4381817fc2de5bf342c, type: 2}
 --- !u!114 &114635884583426450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,3 +181,5 @@ SpriteRenderer:
   m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
