@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health {
 
@@ -24,6 +25,10 @@ public class PlayerHealth : Health {
     {
         //erase
         lives -= 1;
+		if(lives <= 0)
+		{
+			SceneManager.LoadScene("GameOver");
+		}
         livesText.text = "Lives: " + lives;
         GetComponent<SpriteRenderer>().color = Color.clear;
         GetComponent<BoxCollider2D>().enabled = false;
@@ -40,10 +45,7 @@ public class PlayerHealth : Health {
         {
             Die();
         }
-        if(lives < 0)
-        {
-            gameOver = true;
-        }
+
     }
 
 	void Respawn ()

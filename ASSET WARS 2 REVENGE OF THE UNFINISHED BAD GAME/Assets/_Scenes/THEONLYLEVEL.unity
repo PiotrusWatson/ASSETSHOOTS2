@@ -316,6 +316,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61826690290669190, guid: 44e3033ebfacf2f42875fc8a621c0b0c,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e3033ebfacf2f42875fc8a621c0b0c, type: 2}
   m_IsPrefabParent: 0
@@ -563,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ace9882d8c214812b85c018d41f6e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 0.25
   shot: {fileID: 1765909891714436, guid: 19766e138712afd4992b2235560d0d07, type: 2}
 --- !u!82 &1979642763
 AudioSource:

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212824160752036176}
   - component: {fileID: 61782998590488432}
   - component: {fileID: 114426287436476174}
+  - component: {fileID: 114992194521026048}
   - component: {fileID: 114807153215923008}
   - component: {fileID: 114307131339447990}
   - component: {fileID: 114604788954880720}
@@ -177,6 +178,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   lives: 3
+--- !u!114 &114992194521026048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226512621600144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedf77b04575c4e45862553e466a7530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!212 &212824160752036176
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -217,3 +230,5 @@ SpriteRenderer:
   m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
